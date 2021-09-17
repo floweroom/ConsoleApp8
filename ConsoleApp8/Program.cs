@@ -43,124 +43,115 @@ namespace test3
             return $"{re} + {im}i";
         }
     }
-
-    class Program
+    class Lash
     {
-        static void Sum(string[] args)
-        {
-            int i = 12;
-            Complex complex01 = new Complex();
-            complex01.re = 3;
-            complex01.im = 2;
-
-            Complex complex02 = new Complex();
-            complex02.re = -2;
-            complex02.im = 7;
-
-            Complex complex03 = complex01.Plus(complex02);
-
-            Console.WriteLine(complex03);
-            Console.ReadLine();
+        public double re;
+        public double im;
 
 
 
-        }
-        static void Min()
-        {
-
-            Complex complex04 = new Complex();
-            complex04.re = 3;
-            complex04.im = 2;
-
-            Complex complex05 = new Complex();
-            complex05.re = -2;
-            complex05.im = 7;
-
-            Complex complex06 = complex04.Minus(complex05);
-            Console.WriteLine(complex06);
-            Console.ReadLine();
-
-        }
-
-        class Lash
-        {
-            public double rre;
-            public double iim;
-            public Lash(double rre, double iim);
-
-          {
-                this.rre = rre;
-                this.iim = iim;
-               
-        }
         public Lash Plus(Lash l)
 
         {
-            Lash s;
-            s.rre = rre + l.rre;
-            s.iim = iim + l.iim;
-            return s;
+            Lash s = new Lash();
 
+
+            s.re = re + l.re;
+            s.im = im + l.im;
+            return s;
         }
+
 
         public Lash Minus(Lash w)
 
         {
-            Lash j;
-            j.rre = rre - w.rre;
-            j.iim = iim - w.iim;
-            return j;
 
+
+            Lash j = new Lash();
+
+            j.re = re - w.re;
+            j.im = im - w.im;
+            return j;
         }
+
         public override string ToString()
         {
-            return $"{rre} + {iim}i";
+            return $"{re} + {im}i";
         }
-        class Program
+    }
+    class Program
+
+    {
+        static void Main(string[] args)
+
+
+
+
         {
-            static void Main()
+            Lash lash01 = new Lash();
+            lash01.re = 5;
+            lash01.im = 7;
+            Lash lash02 = new Lash();
+            lash02.re = 4;
+            lash02.im = 2;
+            Console.WriteLine("Введите название операции");
+            string answer = Console.ReadLine();
+
+            Lash lash03 = lash01.Plus(lash02);
+            Lash lash04 = lash01.Minus(lash02);
+
+            switch (answer);
             {
-
-
-                Lash lash01 = new Lash(3, 2);
-
-                int i = 12;
-                Lash lash01 = new Lash();
-                lash01.rre = 3;
-                lash01.iim = 2;
-
-                Lash lash02 = new Lash(-2, 7);
-                lash02.rre = -2;
-                lash02.iim = 7;
-                lash03 = lash01.Plus(lash02);
-
+                case "+": 
                 Console.WriteLine(lash03);
-                Console.ReadLine();
+                break;
+                case "-": 
+                Console.WriteLine(lash04);
+                break;
+
 
             }
+        }
+    }
+    class Program1
+    {l
+        static void myMain(string[] args)
+        {
+            int a;
+            int b = 0;
 
 
-            static void Minus(string[] args)
+            do
             {
+                Console.WriteLine("Выведите число на экран");
 
-                Lash lash04 = new Lash(3, 2); ;
-                lash04.rre = 3;
-                lash04.iim = 2;
+                int.TryParse(Console.ReadLine(), out a);
 
-                Lash lash05 = new Lash(-2, 7);
-                lash05.rre = -2;
-                lash05.iim = 7;
+                if (a % 2 != 0)
+                {
+                    b = b + a;
+                    Console.WriteLine(b);
 
-                lash06 = lash04.Minus(lash05);
+                }
+                else
+                {
+                    Console.WriteLine("Вы ввели четное число");
 
-                Console.WriteLine(lash06);
-                Console.ReadLine();
-
-
-
+                }
             }
-
-
+            while (a != 0);
         }
     }
 }
+
+
+                
+
+
+
+            
+
+
+        
+    
+
