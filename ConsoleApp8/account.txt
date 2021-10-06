@@ -1,0 +1,2 @@
+﻿string []Login  = {root};
+srting []Password = {geekbrains};
