@@ -97,20 +97,31 @@ namespace ConsoleApp8
 
             static void Task3()
             {
-                int data;
+            
+                string data;
+
                 int i = 0;
 
-                do
+                string[] separators = { " " };
+                Console.WriteLine("Вводите нечетные числа");
+                data = Console.ReadLine();
+
+
+                Array.ConvertAll(data.Split(separators, StringSplitOptions.RemoveEmptyEntries), int.Parse);
+                foreach (int j in data)
                 {
-                    Console.WriteLine("Вводите нечетные числа");
-                    data = int.Parse(Console.ReadLine());
-                    bool q = data % 2 == 1;
-                    i++;
+
+
+                    if ((j % 2 != 0) && (j != 0))
+                    {
+                        i++;
+                    }
                 }
-                while (data != 0);
+
                 Console.WriteLine($"Вы ввели {i} нечетных чисел");
                 Console.ReadLine();
             }
+
             static void Task4()
             {
 
